@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 부트 스트랩 사용 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+	a{
+		color : black;
+	}
+.layer .content_box {
+	clear:left;
+	width: 1100px;
+	height: 400px;
+	vertical-align: middle;
+}
+
+.layer .content_box .content {
+	width: 647px;
+	height: 400px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.layer .blank {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.content h2{
+	text-align: left;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#id, #pass {
+	width: 200px;
+	height: 20px;
+	font-size: 20px;
+}
+.loginForm div{
+	margin-top : 30px;
+	margin-left: 100px;
+	width: 100px;
+}
+
+.loginForm label{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.loginForm div span{
+	width: 400px;
+}
+.cinput{
+	margin-left: 20px;
+	margin-right: 10px;
+}
+.loginForm div span #text{
+	margin-right: 20px;
+}
+
+.button{
+	height: 80px;
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+	<div class="layer">
+		<span class="content_box"> <span class="content">
+				<h2>로그인</h2>
+				<form class="loginForm" action="login.dd" method="post">
+					<div>
+						<label for="id">아이디 *</label><br> <input type="text" id="id"
+							name="user_id" />
+					</div>
+					<div>
+						<label for="pass">비밀번호 *</label> <input type="password" id="pass"
+							name="user_pass" />
+					</div>
+					
+					<div class="button">
+						<button id="login2" style="width:100px; height: 40px;" class="btn btn-default">로그인 </button>
+					</div>
+				</form>
+		</span> <span class="blank"></span>
+		</span> <span class="blank"></span>
+	</div>
+</body>
+</html>

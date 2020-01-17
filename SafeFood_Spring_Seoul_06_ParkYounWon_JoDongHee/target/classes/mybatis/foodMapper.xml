@@ -1,0 +1,99 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mybatis.foodMapper">
+	<insert id="insertCustomer" parameterType="customer">
+		insert into user(id,pass,name,address,phone,allergy) values(#{id},#{pass},#{name},#{address},#{phone},#{allergy});
+	</insert>
+	
+	<select id="One" parameterType="String" resultType="customer">
+		select * from user where id = #{id};
+	</select>
+	
+	<select id="findID" parameterType="customer" resultType="String">
+		select id from user where id = #{id} and pass = #{pass};
+	</select>
+	
+	<update id="update" parameterType="customer">
+		update user set pass=#{pass}, name=#{name}, address=#{address}, phone=#{phone},allergy=#{allergy} where id = #{id};
+	</update>
+	
+	<update id="updateCode" parameterType="customer">
+		update user set foodcode = #{foodcode} where id = #{id};
+	</update>
+	
+	<delete id="delete" parameterType="customer">
+		delete from user where id = #{id};
+	</delete>
+	
+	<select id="getFoodsDB" resultType="food">
+		select * from food;
+	</select>
+	
+	<insert id="insertNaver" parameterType="naver">
+		insert into naver values(#{num},#{title},#{writer},#{id},curdate(),#{contents});
+	</insert>
+	
+	<delete id ="deleteNaver" parameterType="int">
+		delete from naver where num = #{num}
+	</delete>
+	
+	<select id="selectOneN" parameterType="int" resultType="naver">
+		select * from naver where num = #{num};	
+	</select>
+	
+	<select id="selectAllN" resultType="naver">
+		select * from naver;
+	</select>
+	
+	<update id="updateNaver" parameterType="naver">
+		update naver set title = #{title}, contents = #{contents} where num = #{num};
+	</update>
+	
+	<select id="bestfood" resultType="String">
+		select foodcode from user;
+	</select>
+	
+	
+	<insert id="insertGongji" parameterType="naver">
+		insert into gongji values(#{num},#{title},#{writer},#{id},curdate(),#{contents});
+	</insert>
+	
+	<delete id ="deleteGongji" parameterType="int">
+		delete from gongji where num = #{num};
+	</delete>
+	
+	<select id="selectOneG" parameterType="int" resultType="naver">
+		select * from gongji where num = #{num};
+	</select>
+	
+	<select id="selectAllG" resultType="naver">
+		select * from gongji;
+	</select>
+	
+	<update id="updateGongji" parameterType="naver">
+		update gongji set title = #{title}, contents = #{contents} where num = #{num};
+	</update>
+	
+	<select id="SelectAllC" resultType="comment">
+		select * from comment;
+	</select>
+	
+	<select id="SelectOneC" resultType="comment" parameterType="int">
+		select * from comment where c_num = #{c_num};
+	</select>
+	
+	<insert id="insertC" parameterType="comment">
+		insert into comment values(#{c_num},#{num},#{id},#{c_content},curdate());
+	</insert>
+	
+	<update id="updateC" parameterType="comment">
+		update comment set c_content = #{c_content};
+	</update>
+	
+	<delete id="deleteC" parameterType="int">
+		delete from comment where num = #{num};
+	</delete>
+</mapper>
+<!-- mapper 파일 : sql 문 작성 -->
